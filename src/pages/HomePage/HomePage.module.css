@@ -1,0 +1,8 @@
+.introImg{
+    max-width: 30%;
+}
+.infoDivider{
+    padding-bottom:0.6rem;
+    border-bottom: 0.1rem solid rgb(214, 214, 214);
+    width:100%;
+}
