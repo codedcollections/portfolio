@@ -1,0 +1,15 @@
+.cardContainer{
+    margin: 1rem 0;
+}
+.headerContainer{
+    background-color: red;
+}
+.contentContainer{
+    background-color: blue;
+}
+.btnContainer{
+    background-color: green;
+}
+.projectImg{
+    max-width: 200px;
+}

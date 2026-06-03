@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .env
 FirebaseTest
+TestCard
+App.css.map
+placeholder.png
