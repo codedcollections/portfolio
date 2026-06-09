@@ -17,35 +17,48 @@ const ProjectCard = () => {
     <div>
       {cards?.map((card) => (
         <div className={s.cardContainer} key={card.id}>
-          <div className={s.headerContainer}>
-            <div className={s.titleAndTags}>
-              <h2>{card.title}</h2>
-              <div className={s.allTags}>
-                {card.tags?.map((tag, index) => (
-                  <p key={index}>{tag}</p>
-                ))}
+          <div className={s.titleAndContent}>
+            <div className={`${s.headerContainer} blueBackground flex`}>
+              <div className={`${s.titleAndTags} flex flex-left flex-down`}>
+                <h2 className={s.cardTitle}>{card.title}</h2>
+                <div className={`${s.allTags} flex`}>
+                  {card.tags?.map((tag, index) => (
+                    <p className="greyBackground" key={index}>
+                      {tag}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <div className={s.videoContainer}>
+                <video
+                  alt="En kort inspelning som visar hur hemsidan ser ut"
+                  className={s.cardVideo}
+                  autoPlay
+                  muted
+                  loop
+                >
+                  <source src={card.video} type="video/mp4" />
+                  Your browser does not support video.
+                </video>
               </div>
             </div>
-            <div className={s.videoContainer}>
-              <video
-                style={{ width: "30%", height: "auto" }}
-                autoPlay
-                muted
-                loop
-              >
-                <source src={card.video} type="video/mp4" />
-                Your browser does not support video.
-              </video>
+            <div className={s.contentContainer}>
+              <p>{card.content}</p>
             </div>
           </div>
-          <div className={s.contentContainer}>
-            <p>{card.content}</p>
-          </div>
-          <div className={s.btnContainer}>
-            <a href={card.repository} target="_blank">
+          <div className={`${s.btnContainer} flex flex-right`}>
+            <a
+              className={`${s.cardLink} darkBackground`}
+              href={card.repository}
+              target="_blank"
+            >
               <FaGithub />
             </a>
-            <a href={card.website} target="_blank">
+            <a
+              className={`${s.cardLink} darkBackground`}
+              href={card.website}
+              target="_blank"
+            >
               Besök hemsida
             </a>
           </div>

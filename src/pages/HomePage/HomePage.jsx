@@ -1,6 +1,7 @@
 import s from "./HomePage.module.css"
 import { useEffect, useState } from "react"
-import Hej from "../../images/Hej.png"
+import introImg from "../../images/intro.png"
+
 import { onIntro } from "../../../api"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
 
@@ -17,7 +18,11 @@ const HomePage = () => {
   return (
     <div className={`${s["wrapper"]}`}>
       <div className={`${s.introImgContainer} flex`}>
-        <img className={s.introImg} src={Hej} alt="Intro image" />
+        <img
+          className={s.introImg}
+          src={introImg}
+          alt="Ordet hej i vit text framför en blandning av färger och former"
+        />
       </div>
       <h1>{intro?.text} 🎨 💻</h1>
 
