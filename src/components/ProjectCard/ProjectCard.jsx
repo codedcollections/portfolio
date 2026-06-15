@@ -14,7 +14,7 @@ const ProjectCard = () => {
   }, [])
 
   return (
-    <div>
+    <div className={`${s.cardGrid}`}>
       {cards?.map((card) => (
         <div className={s.cardContainer} key={card.id}>
           <div className={s.titleAndContent}>
@@ -43,7 +43,9 @@ const ProjectCard = () => {
               </div>
             </div>
             <div className={s.contentContainer}>
-              <p>{card.content}</p>
+              {card.content?.map((content, index) => (
+                <p key={index}>{content}</p>
+              ))}
             </div>
           </div>
           <div className={`${s.btnContainer} flex flex-right`}>

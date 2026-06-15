@@ -35,3 +35,18 @@ export function onIntro(setter) {
     setter(intro)
   })
 }
+
+export function onWIP(setter) {
+  const wipRef = ref(db, "wip")
+
+  return onValue(wipRef, (snapshot) => {
+    const wip = snapshot.val()
+
+    if (!wip) {
+      setter(null)
+      return
+    }
+
+    setter(wip)
+  })
+}

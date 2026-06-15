@@ -1,3 +1,11 @@
+.cardGrid{
+    display:grid;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+}
 .cardContainer{
     margin-bottom:1rem;
     border-radius: 1rem 1rem 0 0;
@@ -35,6 +43,12 @@
 .contentContainer{
     background-color: rgb(255, 255, 255);
     padding: 0 0.4rem;
+    margin:0.1rem 0;
+    height: 125px;
+    overflow-y: auto;
+}
+.contentContainer p+p{
+    margin-top:0.2rem;
 }
 .btnContainer{
     background-color: rgb(255, 255, 255);
@@ -54,6 +68,19 @@
     padding:0.2rem 0.4rem;
     border-radius: 0.4rem;
 }
+
+@media screen and (max-width: 820px) {
+    .cardGrid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:2rem;
+    }
+    .contentContainer{
+        height: 100%;
+        overflow-y: none;
+    }
+}
+
 @media screen and (max-width: 350px) {
 
     .headerContainer{
@@ -80,3 +107,4 @@
         border-radius: 0.3rem;
     }
 }
+
