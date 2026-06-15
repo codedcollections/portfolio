@@ -4,7 +4,6 @@ import introImg from "../../images/intro.png"
 
 import { onIntro } from "../../../api"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
-import WorkInProgress from "../../components/WorkInProgress/WorkInProgress"
 
 const HomePage = () => {
   const [intro, setIntro] = useState(null)
