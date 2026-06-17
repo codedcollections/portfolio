@@ -2,16 +2,20 @@ import s from "./HomePage.module.css"
 import { useEffect, useState } from "react"
 import introImg from "../../images/intro.png"
 
-import { onIntro } from "../../../api"
+import { onIntro, onSocials } from "../../../api"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
+import { FaLinkedin } from "react-icons/fa6"
 
 const HomePage = () => {
   const [intro, setIntro] = useState(null)
+  const [socials, setSocials] = useState(null)
 
   useEffect(() => {
     const unsubscribeIntro = onIntro(setIntro)
+    const unsubscribeSocials = onSocials(setSocials)
     return () => {
       unsubscribeIntro()
+      unsubscribeSocials()
     }
   }, [])
 
@@ -31,6 +35,19 @@ const HomePage = () => {
 
       <h3 className={s.infoDivider}>Webbprogrammering</h3>
       <ProjectCard />
+
+      <h3 className={s.infoDivider}></h3>
+
+      <div className={`${s.socialsContainer} flex`}>
+        <a
+          className={`${s.linkedIn} flex`}
+          target="_blank"
+          href={socials?.linkedin}
+        >
+          kontakta mig på{" "}
+          <FaLinkedin className={`${s.linkedInIcon}`} size={20} />
+        </a>
+      </div>
 
       <footer className={`flex`}>2026</footer>
     </div>

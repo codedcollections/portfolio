@@ -50,3 +50,18 @@ export function onWIP(setter) {
     setter(wip)
   })
 }
+
+export function onSocials(setter) {
+  const socialsRef = ref(db, "socials")
+
+  return onValue(socialsRef, (snapshot) => {
+    const socials = snapshot.val()
+
+    if (!socials) {
+      setter(null)
+      return
+    }
+
+    setter(socials)
+  })
+}
