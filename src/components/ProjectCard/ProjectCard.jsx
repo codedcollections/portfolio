@@ -39,7 +39,7 @@ const ProjectCard = () => {
                 </div>
               </div>
               <div className={s.videoContainer}>
-                <video className={s.cardVideo} autoPlay muted loop>
+                <video className={s.cardVideo} autoPlay muted playsInline loop>
                   <source
                     src={thumbnailVideos[card.project]}
                     type="video/mp4"
