@@ -22,7 +22,7 @@
     grid-template-columns: repeat(2,1fr);
     border-radius: 1rem 1rem 0 0;
     justify-content: space-between;
-    padding:0.8rem 0.6rem 0 0.6rem;
+    padding:1.6rem 0.6rem 0.6rem 0.6rem;
 }
 .cardTitle{
     font-family: "superfoods";

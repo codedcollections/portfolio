@@ -2,9 +2,18 @@ import { useEffect, useState } from "react"
 import { onCards } from "../../../api"
 import s from "./ProjectCard.module.css"
 import { FaGithub } from "react-icons/fa"
-
+import plottwist from "../../assets/videos/plottwist.mp4"
+import productivity from "../../assets/videos/productivity.mp4"
+import pokemon from "../../assets/videos/pokemon.mp4"
+import blog from "../../assets/videos/blog.mp4"
 const ProjectCard = () => {
   const [cards, setCards] = useState([])
+  const thumbnailVideos = {
+    plottwist,
+    productivity,
+    pokemon,
+    blog,
+  }
 
   useEffect(() => {
     const unsubscribeCards = onCards(setCards)
@@ -30,14 +39,11 @@ const ProjectCard = () => {
                 </div>
               </div>
               <div className={s.videoContainer}>
-                <video
-                  alt="En kort inspelning som visar hur hemsidan ser ut"
-                  className={s.cardVideo}
-                  autoPlay
-                  muted
-                  loop
-                >
-                  <source src={card.video} type="video/mp4" />
+                <video className={s.cardVideo} autoPlay muted loop>
+                  <source
+                    src={thumbnailVideos[card.project]}
+                    type="video/mp4"
+                  />
                   Your browser does not support video.
                 </video>
               </div>

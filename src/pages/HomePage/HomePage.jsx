@@ -1,6 +1,6 @@
 import s from "./HomePage.module.css"
 import { useEffect, useState } from "react"
-import introImg from "../../images/intro.png"
+import introImg from "../../assets/images/intro.png"
 
 import { onIntro, onSocials } from "../../../api"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
