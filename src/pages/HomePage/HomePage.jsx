@@ -33,10 +33,10 @@ const HomePage = () => {
       </div>
       <h2 className={`${s.projectsHeader}`}>Mina projekt</h2>
 
-      <h3 className={s.infoDivider}>Webbprogrammering</h3>
+      <h3 className={`${s.infoDivider} flex`}>Webbprogrammering</h3>
       <ProjectCard />
 
-      <h3 className={s.infoDivider}></h3>
+      <h3 className={`${s.infoDivider} flex`}></h3>
 
       <div className={`${s.socialsContainer} flex`}>
         <a
